@@ -13,3 +13,4 @@
     - Default: `root`
   - `DB_USERNAME`
   - `DB_PASSWORD`
+- Run `docker-compose up -d` in the project folder.
