@@ -14,3 +14,7 @@
   - `DB_USERNAME`
   - `DB_PASSWORD`
 - Run `docker-compose up -d` in the project folder.
+
+---
+
+You can access the app container by running `docker exec -it myproject_app bash` when the `DOCKER_PREFIX` is `myproject`.
