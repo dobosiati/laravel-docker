@@ -7,6 +7,7 @@
   - `DOCKER_PREFIX`
   - `APP_URL`
   - `MAIL_URL`
+  - `DB_HOST` has to be `mysql`
   - `DB_DATABASE`
   - `DB_ROOT_PASSWORD` (optional)
     - Default: `root`
