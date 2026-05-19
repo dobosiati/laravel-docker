@@ -5,8 +5,8 @@
 - Copy the `docker` folder and the docker-compose.yml file to your project folder.
 - Make sure that the `.env` file has these variables:
   - `DOCKER_PREFIX`
-  - `APP_URL`
-  - `MAIL_URL`
+  - `APP_URL` and `MAIL_URL`
+    - Remember to add them to your `hosts` file.
   - `DB_HOST` has to be `mysql`
   - `DB_DATABASE`
   - `DB_ROOT_PASSWORD` (optional)
