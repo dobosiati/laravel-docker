@@ -80,7 +80,7 @@ services:
     restart: unless-stopped
 
     labels:
-      caddy: ${MAIL_URL}
+      caddy: "${MAIL_URL}::mail.${APP_URL}"
       caddy.tls: internal
       caddy.reverse_proxy: "{{upstreams 8025}}"
 

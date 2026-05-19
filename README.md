@@ -5,10 +5,12 @@
 - Copy the `docker` folder and the docker-compose.yml file to your project folder.
 - Make sure that the `.env` file has these variables:
   - `DOCKER_PREFIX`
-  - `APP_URL` and `MAIL_URL`
+  - `APP_URL`
     - With or without the `http://` or `https://`. Default is `https://`.
+  - `MAIL_URL` (optional)
+    - Default: `mail.${APP_URL}`
   - `DB_DATABASE`
   - `DB_ROOT_PASSWORD` (optional)
-    - Default is `root`. 
+    - Default: `root`
   - `DB_USERNAME`
   - `DB_PASSWORD`
