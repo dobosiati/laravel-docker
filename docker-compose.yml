@@ -52,7 +52,7 @@ services:
 
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
-      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}::root"
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root}
       MYSQL_USER: ${DB_USERNAME}
       MYSQL_PASSWORD: ${DB_PASSWORD}
 
@@ -80,7 +80,7 @@ services:
     restart: unless-stopped
 
     labels:
-      caddy: "${MAIL_URL}"
+      caddy: ${MAIL_URL}
       caddy.tls: internal
       caddy.reverse_proxy: "{{upstreams 8025}}"
 
