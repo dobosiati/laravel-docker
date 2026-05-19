@@ -8,7 +8,8 @@
   - `APP_URL`
     - With or without the `http://` or `https://`. Default is `https://`.
   - `MAIL_URL` (optional)
-    - Default: `mail.${APP_URL}`
+    - Default: `mail.${APP_URL}`.
+    - Add this variable if you specify the `APP_URL` network protocol (etc.: `http://`).
   - `DB_DATABASE`
   - `DB_ROOT_PASSWORD` (optional)
     - Default: `root`
