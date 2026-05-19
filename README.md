@@ -17,4 +17,4 @@
 
 ---
 
-You can access the app container by running `docker exec -it myproject_app bash` when the `DOCKER_PREFIX` is `myproject`.
+You can access the app container by running `docker compose exec app sh` in the project folder.
