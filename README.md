@@ -1,8 +1,8 @@
 # Installation
 
 - Copy the `docker-reverse-proxy` folder to the root of your project folders.
-- Go in that folder and run `docker-compose up -d`.
-- Copy the `docker` folder and the docker-compose.yml file to your project folder.
+- Go in that folder and run `docker network create web` and `docker-compose up -d`.
+- Copy the `docker` folder and the `docker-compose.yml` file to your project folder.
 - Make sure that the `.env` file has these variables:
   - `DOCKER_PREFIX`
   - `APP_URL` and `MAIL_URL`
@@ -16,6 +16,7 @@
   - `REDIS_HOST` has to be `redis`
   - `REDIS_PORT` has to be `6379`
 - Run `docker-compose up -d` in the project folder.
+- You will have to add www-data ownership to the project folder inside the container: `chown -R www-data:www-data /var/www`.
 
 ---
 
