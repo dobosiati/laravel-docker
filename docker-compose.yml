@@ -17,7 +17,7 @@ services:
 
     networks:
       - internal
-    
+
   nginx:
     image: nginx:alpine
 
@@ -51,7 +51,7 @@ services:
     restart: unless-stopped
 
     ports:
-      - "3306:3306"
+      - "${DB_PORT:-3306}:3306"
 
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}

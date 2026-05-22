@@ -13,6 +13,8 @@
     - Default: `root`
   - `DB_USERNAME`
   - `DB_PASSWORD`
+  - `DB_PORT` (optional)
+    - Default: `3306`
   - `REDIS_HOST` has to be `redis`
   - `REDIS_PORT` has to be `6379`
 - Run `docker-compose up -d` in the project folder.
