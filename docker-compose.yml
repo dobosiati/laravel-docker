@@ -14,6 +14,7 @@ services:
     depends_on:
       - mysql
       - redis
+      - typesense
 
     networks:
       - internal
@@ -41,6 +42,28 @@ services:
 
     networks:
       - web
+      - internal
+
+  horizon:
+    image: dobosiati/php84-laravel:latest
+
+    container_name: ${DOCKER_PREFIX}_horizon
+
+    restart: unless-stopped
+
+    command: php artisan horizon
+
+    volumes:
+      - ./:/var/www
+
+    working_dir: /var/www
+
+    depends_on:
+      - redis
+      - mysql
+      - typesense
+
+    networks:
       - internal
 
   mysql:
@@ -91,8 +114,30 @@ services:
       - web
       - internal
 
+  typesense:
+    image: typesense/typesense:27.1
+
+    container_name: ${DOCKER_PREFIX}_typesense
+
+    restart: unless-stopped
+
+    ports:
+      - "${TYPESENSE_PORT:-8108}:8108"
+
+    volumes:
+      - typesense_data:/data
+
+    environment:
+      TYPESENSE_DATA_DIR: /data
+      TYPESENSE_API_KEY: ${TYPESENSE_API_KEY:-xyz}
+      TYPESENSE_ENABLE_CORS: "true"
+
+    networks:
+      - internal
+
 volumes:
   mysql_data:
+  typesense_data:
 
 networks:
   web:
