@@ -17,6 +17,14 @@
     - Default: `3306`
   - `REDIS_HOST` has to be `redis`
   - `REDIS_PORT` has to be `6379`
+  - `TYPESENSE_HOST` (optional)
+    - Default: `typesense` 
+  - `TYPESENSE_PORT` (optional)
+    - Default: `8108` 
+  - `TYPESENSE_API_KEY` (optional)
+    - Default: `xyz` 
+  - `TYPESENSE_PROTOCOL` (optional)
+    - Default: `http` 
 - Run `docker-compose up -d` in the project folder.
 - You will have to add www-data ownership to the project folder inside the container: `chown -R www-data:www-data /var/www`.
 
