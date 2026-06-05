@@ -15,6 +15,8 @@
   - `DB_PASSWORD`
   - `DB_PORT` (optional)
     - Default: `3306`
+  - `VITE_PORT` (optional)
+    - Default: `5173`
   - `REDIS_HOST` has to be `redis`
   - `REDIS_PORT` has to be `6379`
   - `TYPESENSE_HOST` (optional)
