@@ -26,7 +26,6 @@
   - `TYPESENSE_PROTOCOL` (optional)
     - Default: `http` 
 - Run `docker-compose up -d` in the project folder.
-- You will have to add www-data ownership to the project folder inside the container: `chown -R www-data:www-data /var/www`.
 
 ---
 

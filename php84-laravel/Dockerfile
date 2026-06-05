@@ -7,12 +7,11 @@ RUN apk add --no-cache \
     git \
     unzip \
     zip \
+    shadow \
     icu-dev \
     oniguruma-dev \
     libzip-dev \
     mysql-client \
-    nodejs \
-    npm \
     supervisor \
     freetype-dev \
     libpng-dev \
@@ -52,11 +51,24 @@ RUN apk add --no-cache --virtual .build-deps $PHPIZE_DEPS \
 # Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
+# Node
+COPY --from=node:20-alpine /usr/local /usr/local
+
 # PHP configuration
 # COPY php.ini /usr/local/etc/php/php.ini
 
 # Git safe directory
 RUN git config --global --add safe.directory /var/www
+
+# Install pnpm
+RUN npm install -g pnpm
+
+# For permission issues
+ARG UID=1000
+ARG GID=1000
+RUN deluser www-data || true && \
+    addgroup -g ${GID} www-data && \
+    adduser -D -u ${UID} -G www-data www-data
 
 WORKDIR /var/www
 

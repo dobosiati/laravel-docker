@@ -133,7 +133,6 @@ services:
       TYPESENSE_PORT: ${TYPESENSE_PORT:-8108}
       TYPESENSE_API_KEY: ${TYPESENSE_API_KEY:-xyz}
       TYPESENSE_ENABLE_CORS: "true"
-      TYPESENSE_PROTOCOL: ${TYPESENSE_PROTOCOL:-http}
 
     networks:
       - internal
